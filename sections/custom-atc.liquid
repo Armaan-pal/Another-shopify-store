@@ -193,15 +193,6 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
             body: JSON.stringify(itemToAdd)
         })
         .then(response => response.json()
-              const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
-        let message = '';
-        if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
-          if (typeof updatedValue === 'undefined') {
-            message = window.cartStrings.error;
-          } else {
-            message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
-          }
-        }
 )
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
