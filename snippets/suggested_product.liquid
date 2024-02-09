@@ -1,0 +1,79 @@
+<style>
+.prod_img-name{
+    width: 50px;
+    height: 50px;
+  }
+  .prod_img-name img{
+    width: 100%;
+    height: -webkit-fill-available;
+    border-radius:50%;
+    object-fit:cover;
+  }
+  .prod_img_slate{
+    display: flex;
+    gap: 9%;
+  }
+  </style>
+      {%if product.metafields.custom.suggested_product != blank%}
+          <div class="meta-color-name"><p>Suggested Products:<span class="name-prod-span"></span></p></div>
+      {% endif %}
+          {% assign sug_fabric = product.metafields.custom.suggested_product.value %}
+          {%if sug_fabric  != blank%}
+
+          <!-- <div class=""><p>Product:<span class="name-prod-span">{{  }}</span></p></div> -->
+          <div class="prod_img_slate">
+         {%for prod in sug_fabric%}
+      {% if prod.metafields.custom.suggested_fabric != blank %}
+          <div class="prod_img-name" name-prod-swatch="{{prod.title}}">
+
+          {% assign swatch_image = prod.metafields.custom.suggested_fabric.value %}
+            <a class="text_img_link" href="{{prod.url}}">
+              <img class="" loading="eager" srcset="{%- if  swatch_image.width >= 165 -%}{{  img | img_url: '165x' }} 165w,{%- endif -%}
+                {%- if  swatch_image.width >= 360 -%}{{  img | img_url:'360x' }} 360w,{%- endif -%}
+                {%- if  swatch_image.width >= 535 -%}{{  img | img_url: '535x' }} 535w,{%- endif -%}
+                {%- if  swatch_image.width >= 750 -%}{{  img | img_url:'750x' }} 600w,{%- endif -%}
+                {%- if  swatch_image.width >= 1000 -%}{{  img | img_url:'1200x' }} 1000w,{%- endif -%}
+                {%- if  swatch_image.width >= 1500 -%}{{  img | img_url: '1500x' }} 1500w,{%- endif -%}
+                {{  swatch_image | img_url:'' }} {{  swatch_image.width }}w"
+                src="{{  swatch_image.src | img_url:'1500x' }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width:750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{  swatch_image.alt | escape }}"
+                
+                width="{{  swatch_image.width }}"
+                height="{{  swatch_image.height }}">
+        
+        {% comment %}    {% for img in swatch_image%}
+              <div class="prod_pic_palate">
+              
+              <img class="" loading="eager" srcset="{%- if  img.width >= 165 -%}{{  img | img_url: '165x' }} 165w,{%- endif -%}
+                              {%- if  img.width >= 360 -%}{{  img | img_url:'360x' }} 360w,{%- endif -%}
+                              {%- if  img.width >= 535 -%}{{  img | img_url: '535x' }} 535w,{%- endif -%}
+                              {%- if  img.width >= 750 -%}{{  img | img_url:'750x' }} 600w,{%- endif -%}
+                              {%- if  img.width >= 1000 -%}{{  img | img_url:'1200x' }} 1000w,{%- endif -%}
+                              {%- if  img.width >= 1500 -%}{{  img | img_url: '1500x' }} 1500w,{%- endif -%}
+                              {{  img | img_url:'' }} {{  img.width }}w"
+                      src="{{  img.src | img_url:'1500x' }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width:750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                      alt="{{  img.alt | escape }}"
+                    
+                      width="{{  img.width }}"
+                      height="{{  img.height }}">
+              </div>
+            {%endfor%}
+
+            <div class="prod-name-style">
+              <p>{{prod.title | truncatewords: 3, '...'}}</p>
+            </div> {% endcomment %}
+            </a>
+          </div>
+  {% endif %}
+          {% endfor%}
+        </div>
+        {%endif%}
+
+        <script>
+          var prod_name_attr = document.getAttribute('name-prod-swatch')
+          var space_prod_name = document.querySelector('.name-prod-span')
+
+          space_prod_name.innerHTML = prod_name_attr
+        </script>

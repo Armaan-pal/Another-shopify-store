@@ -1,0 +1,48 @@
+<div id="product-list-section">
+  {% for product in collection.products %}
+    <div class="product">{{ product.title }}</div>
+  {% endfor %}
+
+  <!-- Load More button -->
+  <button id="load-more-btn">Load More</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sectionId = 'product-list-section';
+  const sectionContainer = document.getElementById(sectionId);
+  const loadMoreBtn = document.getElementById('load-more-btn');
+
+  // Initial product count and limit
+  let currentProductCount = {{ section.products.size }};
+  const productLimit = 10; // Adjust as needed
+
+  loadMoreBtn.addEventListener('click', function() {
+    // Fetch additional products via AJAX
+    fetch('/products.json?limit=' + productLimit + '&offset=' + currentProductCount)
+      .then(response => response.json())
+      .then(data => {
+        // Update the product list section with new products
+        data.products.forEach(product => {
+          const productDiv = document.createElement('div');
+          productDiv.classList.add('product');
+          productDiv.textContent = product.title;
+          sectionContainer.appendChild(productDiv);
+        });
+
+        // Update the current product count
+        currentProductCount += data.products.length;
+      })
+      .catch(error => console.error('Error fetching products:', error));
+  });
+});
+</script>
+{% schema %}
+  {
+    "name": "atc",
+    "settings": [],
+    "presets":[{
+      "name":"atc"
+    }]
+  }
+{% endschema %}

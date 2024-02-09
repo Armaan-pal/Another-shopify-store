@@ -1,0 +1,542 @@
+<style>
+    .mybtnlook {
+        cursor: pointer;
+        background: #00204F;
+        color: #ffffff;
+        letter-spacing: 2px;
+        font-size: 15px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        justify-content: center;
+        height: 4.4rem;
+    }
+
+    .collection-relatedprod_metafi a p{
+      margin-bottom:0;
+    }
+
+    .Soldoutvar{
+      background: #aaaaaa !important;
+      pointer-events: none;
+      cursor: not-allowed !important;
+    }
+
+    .modal-ATC-Collection {
+        display: none;
+        position: fixed;
+        z-index: 99;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .pElementi{
+      width:30px;
+      height:30px;
+    }
+    .pElementi img{
+      border-radius:50%;
+      width:100%;
+      height:-webkit-fill-available;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 49%;
+        height: fit-content;
+        z-index: 99;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .price_name_product .rightinformation .price .price__regular span {
+        text-align: left;
+    }
+
+    .popup_addtocart_btn {
+        text-align: center;
+        height: 60px;
+        border: 2px solid black;
+        padding-top: 15px;
+        margin-top: 13px;
+    }
+
+    .popup_addtocart_btn h3 {
+        margin: 0;
+    }
+
+    .view_more_popup p{
+      margin-top:0;
+    }
+
+    .view_more_popup p::after {
+    width: 96px;
+    content: "";
+    display: block;
+    border-bottom: 1px solid #000;
+  }
+
+    .card_popup_product {
+        display: flex;
+        gap: 16px;
+    }
+
+    .popup_featured_img {
+        height: 183px;
+        width: 153px;
+    }
+
+    .popup_featured_img img {
+        height: -webkit-fill-available;
+        width: 100%;
+    }
+
+    .parent_element_class .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .parent_element_class .close:hover,
+    .parent_element_class .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .popup_prod_variant {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 13px;
+        margin-top:13px
+    }
+
+    .popup_prod_variant p {
+        border: 1px solid;
+        margin:0;
+        text-align: center;
+      font-size: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup_variant_collection {
+        cursor: pointer;
+    }
+
+    .collection-relatedprod_metafi{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+          margin: 6px 0px;
+    }
+
+    .popup_addtocart_btn {
+        cursor: pointer;
+        background: #00204F;
+        color: #ffffff;
+        letter-spacing: 2px;
+        font-size: 15px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        justify-content: center;
+    }
+
+    .popup_addtocart_btn h3{
+        color:#fff;
+    }
+
+    .selectedvariantpopup{
+      outline:2px solid #00204F;
+    }
+
+    .price_name_product .price__regular{
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .parent_element_class{
+      height: auto;
+      position: relative;
+    }
+
+    .price_name_product .price__regular p{
+      margin:0;
+    }
+    .closepopuponclick{
+      width: 100%;
+      height: 83%;
+      background: transparent;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    @media only screen and (min-width: 1580px){
+      .modal-content {
+        width:39%
+      }
+      .popup_prod_variant p {
+        padding:9px;
+      }
+    }
+
+   @media only screen and (max-width: 768px) {
+
+     .view_more_popup p::after {
+           width: 63px;
+     }
+     .modal-content {
+       width:100%;
+     }
+      .popup_featured_img{
+          height: 103px;
+          width: 93px;
+      }
+
+    .card_popup_product {
+      gap:13px;
+    }
+
+    .popup_prod_variant{
+      gap:9px;
+    }
+
+    .popup_prod_variant p {
+      font-size: 9px;
+          padding: 3px;
+    }
+
+    .popup_addtocart_btn{
+      height:43px;
+      margin-top: 15px;
+    }
+
+    .popup_addtocart_btn h3{
+      font-size:13px;
+    }
+
+    .parent_element_class .close{
+      top: 0px;
+      position: absolute;
+      right: 3px;
+    }
+
+    .modal-content{
+      position: fixed;
+      height: fit-content;
+      bottom: 0;
+      top:unset;
+      left:unset;
+      transition: bottom 0.3s ease;
+      transform:unset;
+    }
+
+    .card__text{
+      font-size: 14px;
+      margin: 3px 0;
+    }
+
+    .price_name_product .price__regular{
+      gap:3px;
+    }
+
+    .price_name_product .price__regular p{
+      margin: 0;
+      font-size: 9px;
+    }
+
+    .price_name_product .price__regular span{
+      font-size: 9px;
+    }
+
+     .collection-relatedprod_metafi{
+           margin-top: 23px;
+     }
+
+    .view_more_popup p{
+      margin: 0 9px;
+      font-size: 9px;
+    }
+    .pElementi {
+      width: 23px;
+      height: 23px;
+    }
+
+     .mybtnlook{
+        height: 3.4rem;
+        margin-bottom: 23px;
+        margin-right: 9px;
+     }
+
+    }
+</style>
+<div class="parent_element_class">
+  <div id="myModal" class="modal-ATC-Collection">
+    <div class="closepopuponclick" onclick="closepopupmodl()"></div>
+    <div class="modal-content">
+      <span class="close" onclick="closepopupmodl()">&times;</span>
+      <div class="card_popup_product">
+        <div class="popup_featured_img">
+          <img
+            srcset="
+              {%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+              {%- if product_card_product.featured_media.width >= 360 -%}{{ product_card_product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+              {%- if product_card_product.featured_media.width >= 533 -%}{{ product_card_product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+              {%- if product_card_product.featured_media.width >= 720 -%}{{ product_card_product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+              {%- if product_card_product.featured_media.width >= 940 -%}{{ product_card_product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+              {%- if product_card_product.featured_media.width >= 1066 -%}{{ product_card_product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+              {{ product_card_product.featured_media | img_url: 'master' }} {{ product_card_product.featured_media.width }}w
+            "
+            src="{{ '200w.gif' | asset_url }}"
+            data-src="{{ product_card_product.featured_media | img_url: '533x' }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+            alt="{{ product_card_product.featured_media.alt | escape }}"
+            loading="lazy"
+            class="motion-reduce lazyload"
+            width="{{ product_card_product.featured_media.width }}"
+            height="{{ product_card_product.featured_media.height }}"
+          >
+        </div>
+
+        <div class="price_name_product">
+          <h2 class="card__text h3">Product name</h2>
+          <div class="price__regular">
+            <span>₹</span>
+            <p>Rs 33</p>
+          </div>
+          <div class="view_more_popup">
+            <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link">
+              <p>VIEW DETAILS</p>
+            </a>
+          </div>
+          <div id="parentElementId" class="collection-relatedprod_metafi"></div>
+        </div>
+      </div>
+      <div class="popup_prod_variant"></div>
+      <div class="popup_addtocart_btn">
+        <h3>Add to cart</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var productData;
+  var newattrr;
+    // var trimedprcele = document.querySelector('.card_popup_product .price__regular p').textContent 
+
+  function opennav(event) {
+      document.querySelector('.modal-ATC-Collection').style.display = "block";
+      document.querySelector('.modal-ATC-Collection').classList.toggle("off-scroll-window") 
+      if (document.querySelector('.modal-ATC-Collection').classList.contains("off-scroll-window")) { 
+                 
+                    document.documentElement.style.overflow = 'hidden';
+      } else { 
+                   
+            document.documentElement.style.overflow = 'auto';
+      }
+
+  document.querySelectorAll('.mybtnlook').forEach((col) => {
+  var colattrbut = col.getAttribute('data-pro');
+  var spltcol = colattrbut.split("?")[0];
+  console.log(spltcol);
+  col.setAttribute('data-pro', spltcol);
+  });
+      var productHandle = event.target.getAttribute("data-pro");
+
+  var myHeaders = new Headers();
+myHeaders.append("X-Shopify-Storefront-Access-Token", "3d1a8e48be80a39516c50008f3dfa112");
+myHeaders.append("Content-Type", "application/json");
+
+var graphql = JSON.stringify({
+
+  query: `{\r\n    productByHandle(handle: \"${productHandle.split("/")[2]}\") {\r\n    title\r\n     featuredImage {\r\n      src\r\n    }\r\n    handle\r\n    id\r\n    priceRange {\r\n      maxVariantPrice {\r\n        amount\r\n      }\r\n      minVariantPrice {\r\n        amount\r\n      }\r\n    }\r\n related_product: metafield(key: \"related_product\", namespace: \"custom\") {\r\n      references(first:20){\r\n          nodes\r\n       {\r\n        ... on Product {\r\n          id\r\n          handle\r\n          image: metafield(key: \"releated_image\", namespace: \"custom\") {\r\n            references(first: 10) {\r\n              nodes {\r\n                ... on MediaImage {\r\n                  id\r\n                  previewImage {\r\n                    src\r\n                  }\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n       }\r\n      }\r\n    }\r\nvariants(first: 20) {\r\n      nodes {\r\n        title\r\n        id\r\n        availableForSale\r\n      }\r\n    }\r\n  }\r\n}`,
+  variables: {}
+
+})
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: graphql,
+  redirect: 'follow'
+};
+
+fetch("https://bowandsquare.myshopify.com/api/2023-07/graphql.json", requestOptions)
+  .then(response => response.json())
+  .then((result) => {
+  productData = result;
+  var variant = productData.data.productByHandle.variants.nodes;
+  var parentElement = document.getElementById("parentElementId");
+  variant.textContent = '';
+  parentElement.innerHTML = '';
+  console.log('productData',productData)
+  document.querySelector('.price_name_product h2').textContent = productData.data.productByHandle.title;
+  document.querySelector('.card_popup_product .price__regular p').textContent = productData.data.productByHandle.priceRange.maxVariantPrice.amount;
+  document.querySelector('.view_more_popup a').setAttribute('href', `/products/${productData.data.productByHandle.handle}`)
+  document.querySelector('.popup_featured_img img').setAttribute('src', productData.data.productByHandle.featuredImage.src)
+
+    document.querySelector('.card_popup_product .price__regular p').textContent = document.querySelector('.card_popup_product .price__regular p').textContent.replace(/\.0$/, "")
+variant.forEach((variantp, index) => {
+  var newp = document.createElement('p')
+  newp.setAttribute('variantAvailable',variantp.availableForSale);
+  if(newp.getAttribute('variantavailable') == 'false'){
+    newp.textContent = 'Sold Out'
+  }
+  else{
+    newp.textContent = variantp.title;
+  }
+  console.log()
+  newp.setAttribute('data-id', variantp.id)
+  newp.className = 'popup_variant_collection'
+  if (index === 0) {
+      newp.classList.add('selectedvariantpopup');
+  }
+  document.querySelector('.popup_prod_variant').appendChild(newp)
+})
+
+var firstptag = document.querySelector('.popup_variant_collection')
+if(firstptag){
+newattrr = firstptag.getAttribute('data-id').split("/")[4]
+}
+
+var pvariantnewly = document.querySelectorAll('.popup_variant_collection');
+pvariantnewly.forEach((pvn) => {
+pvn.addEventListener('click', function (event) {
+newattrr = pvn.getAttribute('data-id').split("/")[4];
+pvn.classList.add('selectedvariantpopup');
+
+pvariantnewly.forEach((item) => {
+  if (item !== pvn) {
+    item.classList.remove('selectedvariantpopup');
+  }
+});
+});
+})
+
+    document.querySelectorAll('.popup_prod_variant p ').forEach((prodvarp)=>{
+      if(prodvarp.textContent.includes('Default Title')){
+        document.querySelector('.popup_prod_variant p ').style.display = "none"
+      }
+    })
+
+    document.querySelectorAll('.popup_variant_collection').forEach((ov)=>{
+      if(ov.textContent == "Sold Out"){
+        document.querySelector('.popup_addtocart_btn').classList.add('Soldoutvar')};
+    })
+
+    var buttonH3 = document.querySelector('.popup_addtocart_btn h3');
+
+    document.querySelectorAll('.popup_variant_collection').forEach((nov) => {
+      if (nov.classList.contains('selectedvariantpopup') && nov.getAttribute('variantAvailable')=='false') {
+        buttonH3.textContent = 'Sold Out'
+      }else(buttonH3.textContent = 'Add to cart')
+    });
+
+  var prodrelate = productData.data.productByHandle.related_product.references.nodes;
+
+  function addElements() {
+
+    if (parentElement.querySelector("a[href^='/products/']") === null) {
+        prodrelate.forEach(function (node) {
+            var handle = node.handle;
+            var image_reference = node.image.references.nodes[0].previewImage.src;
+            var pElementa = document.createElement("a");
+            var pElementi = document.createElement("img");
+            var pElementdiv = document.createElement('div');
+            pElementdiv.classList.add('pElementi');
+            pElementi.setAttribute('src', image_reference);
+            pElementa.setAttribute('href', `/products/${handle}`);
+            pElementdiv.appendChild(pElementi);
+            pElementa.appendChild(pElementdiv);
+            parentElement.appendChild(pElementa);
+        });
+    }
+}
+
+addElements();
+
+
+
+
+})
+  .catch(error => console.log('error', error));
+}
+
+  var newpopupatc =  document.querySelector('.popup_addtocart_btn')
+  newpopupatc.addEventListener('click',function(event){
+    let itemToAdd = {
+      'items': [{
+        'id': newattrr,
+        'quantity': 1
+      }]
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(itemToAdd)
+      })
+      .then(response => {
+        return response.json();
+      }).then((proccessedResponse)=>{
+        fetch('/cart.js').then(data=>data.json()).then(response=>{
+          $(".drawer_item").remove();
+             updatelineitem(response);
+             updatedrawer(response);
+             cartcheck(response);
+              $("cart-count-bubble span").attr("aria-hidden", true);
+             $("header__icon.header__icon--cart").attr("aria-expanded",true);
+             $(".new_cart_drawer").addClass("is-active is-visible");
+             $("html").css("overflow","hidden");
+              let div = document.createElement('div');
+              div.classList.add('cart-count-bubble');
+              div.innerHTML += `<span aria-hidden="true">1</span><span class="visually-hidden">1 item</span>`
+              document.querySelector('.cart-count-bubble') ? 
+                console.log('does exists')
+                :
+                document.querySelector('#cart-icon-bubble').append(div);  
+        })
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  })
+
+  function closepopupmodl() {
+    
+      document.querySelector('.modal-ATC-Collection').style.display = 'none';
+              document.querySelector('.modal-ATC-Collection').classList.toggle("off-scroll-window") 
+              document.querySelector('.popup_addtocart_btn').classList.remove('Soldoutvar')
+      if (document.querySelector('.modal-ATC-Collection').classList.contains("off-scroll-window")) { 
+                 
+                    document.documentElement.style.overflow = 'hidden';
+      } else { 
+                   
+            document.documentElement.style.overflow = 'auto';
+      }
+      var popupProdVariant = document.querySelector('.popup_prod_variant');
+
+      while (popupProdVariant.firstChild) {
+        popupProdVariant.removeChild(popupProdVariant.lastChild);
+
+      }
+    }
+</script>

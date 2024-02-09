@@ -1,0 +1,144 @@
+<style>
+  .pic img{
+    width:100%;
+    height:auto;
+  }
+
+  .select{background:green}
+
+  .custom-atc{
+    padding: 0 80px;
+  }
+  
+  .imgandttlprc{
+    width: 100%;
+    height: auto;
+  }
+
+  .imgandttlprc p{
+    font-size: 23px;
+    font-weight: 600;
+  }
+  
+  .pic{
+    width:30%;
+    height:auto;
+  }
+  .atcbtn span{
+    border: 1px solid brown;
+    width: max-content;
+    padding: 1%;
+    font-size: 17px;
+    color: #000;
+    font-weight: bolder;
+  }
+  .atcbtn{
+            margin: 19px 0px;
+  }
+  .ttlandprc{
+    display: flex;
+    gap: 6%;
+    width: 16%;
+    padding: 0 12px;
+  }
+  .ttlandprc p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+  }
+</style>
+{% assign prod = settings.prodcollc %}
+{% assign protag = prod.tags | join: ', ' %}
+{% assign protagfi = prod.tags | join: ', ' | split: ',' %}
+<div class="custom-atc custom-atc-{{ section.id }}">
+  <p>{{ prod.title }}</p>
+  {% for product in prod.products limit:6 %}
+    {% assign prodpic = product.media[0] %}
+  <div class="imgandttlprc">
+    <div class="pic">
+      <img src="{{ prodpic.src | img_url:"" }}"
+        loading="lazy"
+        alt="alt"
+        height="{{ product.featured_image.height }}"
+        width="{{ product.featured_image.width }}">
+    </div>
+    {% if protag contains 'tag' %}
+      {% for tags in protagfi %}
+        {% if tags contains 'tag'%}
+              <span>{{ tags | remove: 'tag_' | upcase}}</span>
+          {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% comment %}<p class="ttl" varnt="{{ product.id }}">{{ product.title }}</p>{% endcomment %}
+     {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
+    <p>{{ product.title }}</p>
+        {% for variant in product.variants %}
+          <div class="ttlandprc">
+            <p class="ttl" varnt="{{ variant.id }}">{{ variant.title }}</p>
+
+          <p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>
+ </div>
+    {% endfor %}
+   
+    <div class="atcbtn">
+      <span>Add in cart</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+let a;
+document.querySelectorAll('.imgandttlprc').forEach(p=>{
+
+p.querySelectorAll('.ttlandprc').forEach((varian) => {
+    varian.addEventListener('click', function () {
+        p.querySelectorAll('.ttlandprc').forEach((otherVarian) => {
+            otherVarian.style.background = ""; // Reset background color
+        });
+
+        a = varian.querySelector('.prc').getAttribute('var');
+        console.log(a);
+        varian.style.background = "blue";
+    });
+});
+
+p.querySelector('.atcbtn').addEventListener('click', function () {
+    if (a) {
+        let itemToAdd = {
+            "items": [{
+                "id": a,
+                "quantity": 1
+            }]
+        };
+
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemToAdd)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    } else {
+        console.error("No 'var' attribute found. Make sure you clicked on an element with class 'ttlandprc'.");
+    }
+    });
+  })
+
+</script>
+{% schema %}
+  {
+    "name": "custom-atc",
+    "settings": [
+      
+    ],
+    "presets":[
+      {
+      "name":"custom-atc"
+      }
+    ]
+  }
+{% endschema %}

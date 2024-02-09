@@ -1,0 +1,17 @@
+<div>
+  <div>
+    {% for product in collection.products %}
+      <h2>{{ product.title }}</h2>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Rerendering Section",
+    "settings": [],
+    "presets":[{
+      "name":"rerendering_Section"
+    }]
+  }
+{% endschema %}
