@@ -193,9 +193,7 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
             body: JSON.stringify(itemToAdd)
         })
         .then(response => response.json()
-              document.querySelector('cart-drawer').ClassList.remove('is-empty')
-          document.querySelector('.drawer__inner-empty').style.visibility="hidden"
-$('cart-drawer').load(loaction.href + "#cartDrawer")
+            
         )
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
