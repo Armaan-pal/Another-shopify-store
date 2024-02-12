@@ -185,6 +185,8 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
+
+                          {% render 'check-code'%}
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
