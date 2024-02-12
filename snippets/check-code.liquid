@@ -1,20 +1,23 @@
 <style>
-  
+  /* Your styles go here */
 </style>
 
 <div class="check-code">
   <input type="number" id="checkpincode" placeholder="Enter Your pincode">
-  <button class="btnpin" onClick="zipper()">Check</button>
+  <button class="btnpin" onclick="zipper()">Check</button>
 </div>
-<script>
- let zipcodes =[{{ settings.zipcode}}] 
-  function zipper(){
-  let code = document.getElementById('checkpincode').value
 
-  if(zipcodes.includes(parseInt(code)){
-    alert('yes')
-  }else{
-    alert('other zipcode')
-  }
+<script>
+  // Sample zipcodes array, replace this with your actual array from Liquid
+  let zipcodes = [12345, 67890];
+
+  function zipper() {
+    let code = document.getElementById('checkpincode').value;
+
+    if (zipcodes.includes(parseInt(code))) {
+      alert('Yes, the zipcode is valid.');
+    } else {
+      alert('Invalid zipcode.');
+    }
   }
 </script>
