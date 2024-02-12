@@ -4,10 +4,11 @@
 
 <div class="check-code">
   <input type="number" id="checkpincode" placeholder="Enter Your pincode">
-  <button class="btnpin"></button>
+  <button class="btnpin" onclick="chkbtn()"></button>
 </div>
 <script>
  let zipcodes =[{{ settings.zipcode}}] 
+  function zipper(){
   let code = document.getElementById('checkpincode').value
 
   if(zipcodes.includes(parseInt(code)){
@@ -15,4 +16,9 @@
   }else{
     console.log)('other zipcode')
   }
+  }
+
+  function chkbtn(){
+    zipper()
+}
 </script>
