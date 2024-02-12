@@ -181,30 +181,17 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
                 "quantity": 1
         };
 
-        // fetch(window.Shopify.routes.root + 'cart/add.js', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(itemToAdd)
-        // })
-        // .then(response => response.json())
-        // .then(data => console.log(data))
-        // .catch(error => console.error('Error:', error));
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemToAdd)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
 
-      $.ajax({
-        type:'POST',
-        url:'cart/add.js',
-        cache:false,
-        data:itemToAdd,
-        datatype:'json',
-        success: function(data){
-          console.log('yes')
-        },
-        error: function(xhr, ajaxOption, throughError){
-          console.log("error")
-        }
-      })
     } else {
         console.error("No 'var' attribute found. Make sure you clicked on an element with class 'ttlandprc'.");
     }
