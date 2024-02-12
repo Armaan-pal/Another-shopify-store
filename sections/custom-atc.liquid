@@ -98,12 +98,11 @@
 </style>
 {% assign prod = settings.prodcollc %}
 {% assign protag = prod.tags | join: ',' %}
-{% assign protagfi = prod.tags | join: ',' | split: ',' %}
 
   <div class="custom-multi-grid">
     <p class="og">Two grid</p>
     <p class="tg">Three grid</p>
-    <p>{{protagfi}}</p>
+    <p>{{protag}}</p>
   </div>
 <div class="custom-atc custom-atc-{{ section.id }}">
   <!-- <p>{{ prod.title }}</p> -->
@@ -117,7 +116,7 @@
         height="{{ product.featured_image.height }}"
         width="{{ product.featured_image.width }}">
     </div>
-    {% if protagfi contains 'tag' %}
+    {% if protag contains 'tag' %}
       {% for tags in protag %}
         {% if tags contains 'tag'%}
               <span>{{ tags | remove: 'tag_' | upcase}}</span>
