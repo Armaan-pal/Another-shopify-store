@@ -186,7 +186,6 @@
                 {%- endif -%}
               </p>
 
-                          {% render 'check-code'%}
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -222,6 +221,8 @@
                   </div>
                 </details>
               </div>
+                                      {% render 'check-code'%}
+
             {%- when 'quantity_selector' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
