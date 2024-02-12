@@ -104,6 +104,9 @@
                   </h2>
                 </a>
               </div>
+
+                                      {% render 'check-code'%}
+
               {% when 'relatedprod' %}
           <div class="related_prod_rndr">
                   {% render "suggested_product" %}
@@ -221,8 +224,7 @@
                   </div>
                 </details>
               </div>
-                                      {% render 'check-code'%}
-
+            
             {%- when 'quantity_selector' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
