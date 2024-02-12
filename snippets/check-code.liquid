@@ -4,7 +4,7 @@
 
 <div class="check-code">
   <input type="number" id="checkpincode" placeholder="Enter Your pincode">
-  <button class="btnpin" onClick="zipper()">Check</button>
+  <button class="btnpin" onClick="zipper()">Check {{ settings.zipcode}}</button>
 </div>
 <script>
  let zipcodes =[{{ settings.zipcode}}] 
