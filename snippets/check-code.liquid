@@ -1,0 +1,18 @@
+<style>
+  
+</style>
+
+<div class="check-code">
+  <input type="number" id="checkpincode" placeholder="Enter Your pincode">
+  <button class="btnpin"></button>
+</div>
+<script>
+ let zipcodes =[{{ settings.zipcode}}] 
+  let code = document.getElementById('checkpincode').value
+
+  if(zipcodes.includes(parseInt(code)){
+    console.log('yes')
+  }else{
+    console.log)('other zipcode')
+  }
+</script>
