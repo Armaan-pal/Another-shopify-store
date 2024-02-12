@@ -117,8 +117,8 @@
         height="{{ product.featured_image.height }}"
         width="{{ product.featured_image.width }}">
     </div>
-    {% if protag contains 'tag' %}
-      {% for tags in protagfi %}
+    {% if protagfi contains 'tag' %}
+      {% for tags in protag %}
         {% if tags contains 'tag'%}
               <span>{{ tags | remove: 'tag_' | upcase}}</span>
           {% endif %}
