@@ -116,7 +116,13 @@
         height="{{ product.featured_image.height }}"
         width="{{ product.featured_image.width }}">
     </div>
-
+    {% if protag contains 'tag' %}
+      {% for tags in protagfi %}
+        {% if tags contains 'tag'%}
+              <span>{{ tags | remove: 'tag_' | upcase}}</span>
+          {% endif %}
+      {% endfor %}
+      {% endif %}
       {% comment %}<p class="ttl" varnt="{{ product.id }}">{{ product.title }}</p>{% endcomment %}
      {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
     <p>{{ product.title }}</p>
