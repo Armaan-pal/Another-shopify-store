@@ -98,7 +98,7 @@
 </style>
 {% assign prod = settings.prodcollc %}
 {% assign protag = prod.tags | join: ',' %}
-{% assign protagfi = protag.tags | split: ',' %}
+{% assign protagfi = prod.tags | join: ',' | split: ',' %}
 
   <div class="custom-multi-grid">
     <p class="og">Two grid</p>
