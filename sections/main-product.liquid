@@ -687,7 +687,7 @@
     }
   </script>
 
-  <div class="wide_pic">
+  {% comment %} <div class="wide_pic">
 <img srcset="{%- if sec_pic.width >= 165 -%}{{  img | img_url: '165x' }} 165w,{%- endif -%}
                 {%- if sec_pic.width >= 360 -%}{{  img | img_url:'360x' }} 360w,{%- endif -%}
                 {%- if sec_pic.width >= 535 -%}{{  img | img_url: '535x' }} 535w,{%- endif -%}
@@ -702,7 +702,7 @@
                 width="{{ sec_pic.width }}"
                 height="{{ sec_pic.height }}">  
 
-  </div>
+  </div> {% endcomment %}
   </div>
 </section>
 
