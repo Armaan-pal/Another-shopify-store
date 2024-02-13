@@ -197,9 +197,6 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
                 throw new Error('Network response was not ok');
               }
             })
-            .catch(error => {
-              console.error('Error:', error);
-            });
         document.querySelector('cart-drawer').classList.add('active')
       cartCardUpdate();
         } else {
