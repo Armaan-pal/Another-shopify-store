@@ -175,6 +175,8 @@ p.querySelectorAll('.ttlandprc').forEach((varian) => {
 });
 
 p.querySelector('.atcbtn').addEventListener('click', function () {
+
+  
     if (a) {
         let itemToAdd = {
                 "id": a,
@@ -186,7 +188,7 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(itemToAdd)
           })
             .then(response => {
               if (response.ok) {
@@ -194,10 +196,6 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
               } else {
                 throw new Error('Network response was not ok');
               }
-            })
-            .then(res => {
-              // Handle the JSON response (res) here
-              Shopify.moveAlong();
             })
             .catch(error => {
               console.error('Error:', error);
