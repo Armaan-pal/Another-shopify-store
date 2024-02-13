@@ -193,8 +193,8 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
         .then(data => {
             document.querySelector('cart-drawer').classList.add('active')
               document.querySelector('cart-drawer').classList.remove('is-empty');
+          cartCardUpdate();
             console.log('hihihih');
-            cartCardUpdate();
         })
         .catch(error => console.error('Error:', error));
     } else {
