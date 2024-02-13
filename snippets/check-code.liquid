@@ -13,8 +13,10 @@
 
   if(zipcodes.includes(parseInt(code))){
     alert('yes')
+    document.querySelector('.product-form__buttons').classList.add('none-ptr')
   }else{
     alert('other zipcode')
+    document.querySelector('.product-form__buttons').classList.add('none-ptr')
   }
   }
 </script>
