@@ -14,12 +14,12 @@
   let code = document.getElementById('checkpincode').value
 
   if(zipcodes.includes(parseInt(code))){
-    document.querySelector('.product-form__submit').classList.add('none-ptr')
-    document.querySelector('.product-form__submit').classList.add('shopify-payment-button')
+    document.querySelector('.product-form__submit').classList.remove('none-ptr')
+    document.querySelector('.shopify-payment-button').classList.remove('none-ptr')
     console.log('eee')
   }else{
-    document.querySelector('.product-form__submit').classList.remove('none-ptr')
-    document.querySelector('.product-form__submit').classList.remove('shopify-payment-button')
+    document.querySelector('.product-form__submit').classList.add('none-ptr')
+    document.querySelector('.shopify-payment-button').classList.add('none-ptr')
     console.log('vvv')
   }
   }
