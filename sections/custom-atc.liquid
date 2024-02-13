@@ -177,8 +177,8 @@ p.querySelectorAll('.ttlandprc').forEach((varian) => {
 p.querySelector('.atcbtn').addEventListener('click', function () {
     if (a) {
         let itemToAdd = {
-                "id": a,
-                "quantity": 1
+            "id": a,
+            "quantity": 1
         };
 
         fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -189,18 +189,16 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
             body: JSON.stringify(itemToAdd)
         })
         .then(response => response.json())
-        .then(data => 
-
-                 document.querySelector('cart-drawer').classList.add('active')
-console.log('hihihih')
-             )
-
+        .then(data => {
+            document.querySelector('cart-drawer').classList.add('active');
+            console.log('hihihih');
+        })
         .catch(error => console.error('Error:', error));
-
     } else {
         console.error("No 'var' attribute found. Make sure you clicked on an element with class 'ttlandprc'.");
     }
-    });
+});
+
   })
 
 
