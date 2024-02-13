@@ -203,19 +203,11 @@ p.querySelector('.atcbtn').addEventListener('click', function () {
               console.error('Error:', error);
             });
         } else {
-          closeNavpww();
           cartCardUpdate();
         document.querySelector('cart-drawer').classList.add('active')
         }
       };
-      Shopify.moveAlong();
-    } catch (err) {
-      console.log(err);
-    }
 
-    } else {
-        console.error("No 'var' attribute found. Make sure you clicked on an element with class 'ttlandprc'.");
-    }
     });
   })
 
