@@ -12,11 +12,11 @@
   let code = document.getElementById('checkpincode').value
 
   if(zipcodes.includes(parseInt(code))){
-    alert('yes')
     document.querySelector('.product-form__buttons').classList.add('none-ptr')
+    console.log('eee')
   }else{
-    alert('other zipcode')
     document.querySelector('.product-form__buttons').classList.add('none-ptr')
+        console.log('vvv')
   }
   }
 </script>
