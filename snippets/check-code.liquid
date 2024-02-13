@@ -1,5 +1,7 @@
 <style>
-  
+  .none-ptr{
+    pointer-event:none
+  }
 </style>
 
 <div class="check-code">
@@ -15,7 +17,7 @@
     document.querySelector('.product-form__buttons').classList.add('none-ptr')
     console.log('eee')
   }else{
-    document.querySelector('.product-form__buttons').classList.add('none-ptr')
+    document.querySelector('.product-form__buttons').classList.remove('none-ptr')
         console.log('vvv')
   }
   }
