@@ -164,7 +164,8 @@ document.querySelectorAll('.imgandttlprc').forEach(p=>{
 
 p.querySelectorAll('.ttlandprc').forEach((varian) => {
     varian.addEventListener('click', function () {
-        p.querySelectorAll('.ttlandprc').forEach((otherVarian) => {
+      
+        document.querySelectorAll('.imgandttlprc').forEach((otherVarian) => {
             otherVarian.style.background = ""; 
         });
 
