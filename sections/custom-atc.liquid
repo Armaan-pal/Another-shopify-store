@@ -133,9 +133,9 @@
         {% for variant in product.variants %}
           <div class="ttlandprc">
             <p class="ttl" varnt="{{ variant.id }}">{{ variant.title }}
-            {{ variant.option1 }}
-            {{ variant.option2 }}
-            {{ variant.options }}</p>
+           1 {{ variant.option1 }}
+            2{{ variant.option2 }}
+           3 {{ variant.options }}</p>
 
           <p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>
  </div>
