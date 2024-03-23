@@ -49,8 +49,7 @@
       width: 100%;
       padding: 0 12px;
       cursor:pointer;
-          flex-direction: column;
-
+        flex-direction: column;
     }
     .ttlandprc p{
       font-size: 16px;
@@ -134,25 +133,27 @@
       {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
       <p>{{ product.title }}</p>
       {% if product.variants.size > 1 %}
-        {% for variant in product.variants %}
-          <div class="ttlandprc">
-            <p class="ttl" varnt="{{ variant.id }}">
-              {% comment %}{{ variant.title }}{% endcomment %}
-              <p>
-                {{ variant.option1 }}
+        <div class="tpstyl">
+          {% for variant in product.variants %}
+            <div class="ttlandprc">
+              <p class="ttl" varnt="{{ variant.id }}">
+                {% comment %}{{ variant.title }}{% endcomment %}
+                <p>
+                  {{ variant.option1 }}
+                </p>
+                <p>
+                  {{ variant.option2 }}
+                </p>
+                <p>
+                  {{ variant.option3 }}
+                </p>
+                {% comment %}{{ variant.options }}{% endcomment %}
               </p>
-              <p>
-                {{ variant.option2 }}
-              </p>
-              <p>
-                {{ variant.option3 }}
-              </p>
-              {% comment %}{{ variant.options }}{% endcomment %}
-            </p>
 
-            {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
-          </div>
-        {% endfor %}
+              {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
+            </div>
+          {% endfor %}
+        </div>
       {% else %}
         <div class="ttlandprc">
           <p class="ttl" varnt="{{ product.selected_or_first_available_variant.id }}">
