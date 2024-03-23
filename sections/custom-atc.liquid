@@ -137,8 +137,16 @@
           {% for variant in product.variants %}
             <div class="ttlandprc">
               <p class="ttl" varnt="{{ variant.id }}">
-                {% comment %}{{ variant.title }}{% endcomment %}
-              {{ variant }}
+                {{ variant.title }}
+                {% comment %}<p>
+                  {{ variant.option1 }}
+                </p>
+                <p>
+                  {{ variant.option2 }}
+                </p>
+                <p>
+                  {{ variant.option3 }}
+                </p>{% endcomment %}
                 {% comment %}{{ variant.options }}{% endcomment %}
               </p>
 
