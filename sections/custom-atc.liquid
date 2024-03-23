@@ -132,9 +132,11 @@
     {% if product.variants.size > 1 %}
         {% for variant in product.variants %}
           <div class="ttlandprc">
-            <p class="ttl" varnt="{{ variant.id }}">{{ variant.title }}
-
-            
+            <p class="ttl" varnt="{{ variant.id }}">
+            {% comment %}{{ variant.title }}{% endcomment %}
+            {{ variant.option1 }}
+            {{ variant.option2 }}
+            {{ variant.options }}
             </p>
 
           <p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>
