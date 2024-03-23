@@ -137,7 +137,7 @@
             {{ variant.option1 }}
             {{ variant.option2 }}
             {{ variant.option3 }}
-            {{ variant.options }}
+            {% comment %}{{ variant.options }}{% endcomment %}
             </p>
 
           <p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>
