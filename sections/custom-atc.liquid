@@ -137,7 +137,7 @@
           {% for variant in product.variants %}
             <div class="ttlandprc">
               <p class="ttl" varnt="{{ variant.id }}">
-                {% comment %}{{ variant.title }}{% endcomment %}
+                {% comment %}{{ variant.title }}
                 <p>
                   {{ variant.option1 }}
                 </p>
@@ -147,7 +147,7 @@
                 <p>
                   {{ variant.option3 }}
                 </p>
-                {% comment %}{{ variant.options }}{% endcomment %}
+            {{ variant.options }}{% endcomment %}
               </p>
 
               {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
