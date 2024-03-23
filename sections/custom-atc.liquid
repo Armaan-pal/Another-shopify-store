@@ -146,7 +146,7 @@
             {% comment %}{{ variant.options }}{% endcomment %}
             </p>
 
-          <p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>
+          {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
  </div>
     {% endfor %}
     {% else %}
