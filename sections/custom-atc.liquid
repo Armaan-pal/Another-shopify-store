@@ -111,6 +111,7 @@
   <!-- <p>{{ prod.title }}</p> -->
   {% for product in prod.products limit:2 %}
     {% assign prodpic = product.media[0] %}
+    {% if product.price > 2000 %}
   <div class="imgandttlprc">
     <div class="pic">
       <img src="{{ prodpic.src | img_url:"" }}"
@@ -154,6 +155,7 @@
       <span>Add in cart</span>
     </div>
   </div>
+      {% endif %}
   {% endfor %}
 </div>
 
