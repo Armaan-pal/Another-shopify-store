@@ -1,129 +1,135 @@
 <style>
-    .pic img{
-      width:100%;
-      height:auto;
-    }
-
-    .select{background:green}
-
-    .custom-atc{
-      padding: 0 80px;
-      grid-template-columns: 1fr 1fr 1fr;
-      display: grid;
-    }
-
-    .imgandttlprc{
-      width: 100%;
-      height: auto;
-          position: relative;
-    }
-
-    .imgandttlprc p{
-      font-size: 19px;
-      font-weight: 600;
-    }
-
-    .pic{
-      width:100%;
-      height:auto;
-    }
-    .atcbtn span{
-      border: 1px solid brown;
-      width: max-content;
-      padding: 1%;
-      font-size: 17px;
-      color: #000;
-      font-weight: bolder;
-      display: block;
-    }
-    .atcbtn{
-      margin: 36px 0px;
-      width:max-content;
-    }
-
-    .atcbtn span{
-      pointer:cursor;
-    }
-    .ttlandprc{
-      display: flex;
-      gap: 6%;
-      width: 100%;
-      padding: 0 12px;
-      cursor:pointer;
-        flex-direction: column;
-    }
-    .ttlandprc p{
-      font-size: 20px;
-      font-weight: 600;
-      color: #000;
-      border: 2px solid;
-      border-radius: 50%;
-      height: 35px;
-    width: 35px;
-    padding: 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .custom-multi-grid{
-      display: flex;
-      justify-content: center;
-    }
-
-    .custom-multi-grid p{
-          margin: 0 6%;
-      cursor:pointer;
-    }
-
-  .ttl{
-       display: flex;
-        flex-direction: column;
-}
-
-  .ttl span{
-        font-size: 34px;
-  }
-.tpstyl{
-      position: absolute;
-      top: 80px;
-      display: none;
-}
-
-    @media(max-width:768px){
-        .custom-atc{
-      padding: 0 33px;
-      grid-template-columns: 1fr;
-      display: grid;
-    }
-    .pic{
-      width:100%;
-      height:auto;
-    }
-      .imgandttlprc p {
-      font-size: 16px;
-      font-weight: 600;
-  }
-      .ttlandprc {
+      .pic img{
         width:100%;
+        height:auto;
       }
-      .ttlandprc p {
-      font-size: 13px;
-      font-weight: 600;
-      color: #000;
+
+      .select{background:green}
+
+      .custom-atc{
+        padding: 0 80px;
+        grid-template-columns: 1fr 1fr 1fr;
+        display: grid;
       }
-      .atcbtn span {
-      padding: 3%;
-      font-size: 13px;
+
+      .imgandttlprc{
+        width: 100%;
+        height: auto;
+            position: relative;
       }
-      .atcbtn {
-      margin: 19px 0px;
+
+      .imgandttlprc p{
+        font-size: 19px;
+        font-weight: 600;
+      }
+
+      .pic{
+        width:100%;
+        height:auto;
+      }
+      .atcbtn span{
+        border: 1px solid brown;
+        width: max-content;
+        padding: 1%;
+        font-size: 17px;
+        color: #000;
+        font-weight: bolder;
+        display: block;
+      }
+      .atcbtn{
+        margin: 36px 0px;
+        width:max-content;
+      }
+
+      .atcbtn span{
+        pointer:cursor;
+      }
+      .ttlandprc{
+        display: flex;
+        gap: 6%;
+        width: 100%;
+        padding: 0 12px;
+        cursor:pointer;
+          flex-direction: column;
+      }
+      .ttlandprc p{
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+        border: 2px solid;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        padding: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .custom-multi-grid{
-        display:none;
+        display: flex;
+        justify-content: center;
       }
+
+      .custom-multi-grid p{
+            margin: 0 6%;
+        cursor:pointer;
+      }
+
+    .ttl{
+         display: flex;
+          flex-direction: column;
+  }
+
+    .ttlbtn{
+      color:#ffffff;
+      background:grey;
     }
+
+    .ttl span{
+          font-size: 34px;
+    }
+
+  .tpstyl{
+        position: absolute;
+        top: 80px;
+        display: none;
+  }
+
+      @media(max-width:768px){
+          .custom-atc{
+        padding: 0 33px;
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+      .pic{
+        width:100%;
+        height:auto;
+      }
+        .imgandttlprc p {
+        font-size: 16px;
+        font-weight: 600;
+    }
+        .ttlandprc {
+          width:100%;
+        }
+        .ttlandprc p {
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+        }
+        .atcbtn span {
+        padding: 3%;
+        font-size: 13px;
+        }
+        .atcbtn {
+        margin: 19px 0px;
+        }
+
+        .custom-multi-grid{
+          display:none;
+        }
+      }
 </style>
 {% assign prod = settings.prodcollc %}
 
@@ -161,19 +167,19 @@
             <div class="ttlandprc">
               <div class="ttl" varnt="{{ variant.id }}">
                 {% comment %}{{ variant.title }}{% endcomment %}
-                
+
                 <span>{{ option.name }}</span>
                 <div style="    display: flex; gap: 30px;">
-                {%- for value in option.values -%}
-                  <p>
-                    {{ value }}
-                  </p>
-                {% endfor %}
+                  {%- for value in option.values -%}
+                    <p>
+                      {{ value }}
+                    </p>
+                  {% endfor %}
                 </div>
                 {% comment %}{{ variant.options }}{% endcomment %}
-                
               </div>
 
+              <button class="ttlbtn">Quick View</button>
               {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
             </div>
           {% endfor %}
