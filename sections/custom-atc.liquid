@@ -111,7 +111,7 @@
   .tpstyl{
         position: absolute;
         top: 80px;
-        display: none;
+        display: block;
   }
 
       @media(max-width:768px){
@@ -306,6 +306,10 @@ window.cartCardUpdate = function () {
         } else document.querySelector('#CartDrawer-Form').style.display = 'none';
       });
   }
+
+  document.querySelector('.ttlbtn').addEventlistener('click',()=>{
+    document.querySelector('..ttlandprc').style.display = "flex"
+  })
 </script>
 {% schema %}
 {
