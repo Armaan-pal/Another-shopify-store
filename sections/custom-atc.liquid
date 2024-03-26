@@ -71,7 +71,10 @@
        display: flex;
     gap: 50px;
 }
-  }
+.tpstyl{
+      position: absolute;
+    top: 257px;
+}
 
     @media(max-width:768px){
         .custom-atc{
@@ -145,6 +148,7 @@
               <div class="ttl" varnt="{{ variant.id }}">
                 {% comment %}{{ variant.title }}{% endcomment %}
                 {%- for value in option.values -%}
+                  <p>{{ value.name }}</p>
                 <p>
                   {{ value }}
                 </p>
