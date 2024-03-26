@@ -121,6 +121,7 @@
     bottom: 20px;
         font-size: 26px;
     padding: 13px;
+    display:none
   }
 
         @media(max-width:768px){
@@ -321,7 +322,8 @@ window.cartCardUpdate = function () {
     document.querySelectorAll('.ttlandprc').forEach(tap=>{
       tap.style.display = "flex"
     })
-      
+
+    document.querySelector('.atcttlbtn').style.display="flex"
   })
 </script>
 {% schema %}
