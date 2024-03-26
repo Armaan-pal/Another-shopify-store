@@ -161,14 +161,15 @@
             <div class="ttlandprc">
               <div class="ttl" varnt="{{ variant.id }}">
                 {% comment %}{{ variant.title }}{% endcomment %}
-                <span>{{ option.name }}</span>
                 
+                <span>{{ option.name }}</span>
+                <div>
                 {%- for value in option.values -%}
-                <p>
-                  {{ value }}
-                </p>
-                  {% endfor %}
-          
+                  <p>
+                    {{ value }}
+                  </p>
+                {% endfor %}
+                </div>
                 {% comment %}{{ variant.options }}{% endcomment %}
                 
               </div>
