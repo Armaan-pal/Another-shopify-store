@@ -153,7 +153,7 @@
       {% endif %}
       {% comment %}<p class="ttl" varnt="{{ product.id }}">{{ product.title }}</p>{% endcomment %}
       {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
-      <p>{{ product.title }}</p>
+      <p style="display:none">{{ product.title }}</p>
       {% if product.variants.size > 1 %}
         <div class="tpstyl">
           {% for option in product.options_with_values %}
@@ -188,7 +188,7 @@
         </div>
       {% endif %}
 
-      <div class="atcbtn">
+      <div class="atcbtn" style="display:none">
         <span>Add in cart</span>
       </div>
     </div>
