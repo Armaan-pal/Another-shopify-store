@@ -248,24 +248,22 @@
         <div class="tpstyl">
           {% for option in product.options_with_values %}
             <div class="ttlandprc">
-              <!--
-                <div class="ttl" varnt="{{ option.id }}">
+              <div class="ttl" varnt="{{ option.id }}">
                 {% comment %}{{ variant.title }}{% endcomment %}
-              -->
 
-              <span>{{ option.name }}</span>
-              {% assign rd = option.name | downcase %}
-              <div style="    display: flex; gap: 12px;">
-                {%- for value in option.values -%}
-                  {% if rd == 'color' %}
-                    <p style="background:{{value}}"></p>
-                  {% else %}
-                    <p optn_id="{{ value.id }}">
-                      {{ value }}
-                    </p>
-                  {% endif %}
-                {% endfor %}
-                <!-- </div> -->
+                <span>{{ option.name }}</span>
+                {% assign rd = option.name | downcase %}
+                <div style="    display: flex; gap: 12px;">
+                  {%- for value in option.values -%}
+                    {% if rd == 'color' %}
+                      <p style="background:{{value}}"></p>
+                    {% else %}
+                      <p optn_id="{{ value.id }}">
+                        {{ value }}
+                      </p>
+                    {% endif %}
+                  {% endfor %}
+                </div>
                 {% comment %}{{ variant.options }}{% endcomment %}
               </div>
 
