@@ -308,7 +308,10 @@ window.cartCardUpdate = function () {
   }
 
   document.querySelector('.ttlbtn').addEventListener('click',()=>{
-    document.querySelectorAll('.ttlandprc').style.display = "flex"
+    document.querySelectorAll('.ttlandprc').forEach(tap=>{
+      tap.style.display = "flex"
+    })
+      
   })
 </script>
 {% schema %}
