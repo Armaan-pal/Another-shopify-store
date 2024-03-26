@@ -162,14 +162,13 @@
               <div class="ttl" varnt="{{ variant.id }}">
                 {% comment %}{{ variant.title }}{% endcomment %}
                 <span>{{ option.name }}</span>
-                <div style="    display: flex;
-">
+                
                 {%- for value in option.values -%}
                 <p>
                   {{ value }}
                 </p>
                   {% endfor %}
-                </div>
+          
                 {% comment %}{{ variant.options }}{% endcomment %}
                 
               </div>
