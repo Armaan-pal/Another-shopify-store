@@ -252,11 +252,18 @@
                 {% comment %}{{ variant.title }}{% endcomment %}
 
                 <span>{{ option.name }}</span>
+                {% assign rd = option.name | downcase %}
                 <div style="    display: flex; gap: 12px;">
                   {%- for value in option.values -%}
-                    <p>
-                      {{ value }}
-                    </p>
+                    {% if rd == 'color' %}
+                      <p>
+                        {{ value }}
+                      </p>
+                    {% else %}
+                      <p>
+                        {{ value }}
+                      </p>
+                    {% endif %}
                   {% endfor %}
                 </div>
                 {% comment %}{{ variant.options }}{% endcomment %}
