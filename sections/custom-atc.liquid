@@ -187,10 +187,12 @@
 </style>
 {% assign prod = settings.prodcollc %}
 
-<div class="custom-multi-grid">
-  <p class="og">Two grid</p>
-  <p class="tg">Three grid</p>
-</div>
+<!--
+  <div class="custom-multi-grid">
+    <p class="og">Two grid</p>
+    <p class="tg">Three grid</p>
+  </div>
+-->
 <div class="custom-atc custom-atc-{{ section.id }}">
   <!-- <p>{{ prod.title }}</p> -->
   {% for product in prod.products limit: 2 %}
@@ -263,7 +265,7 @@
   })
 
     document.querySelector(".custom-multi-grid .tg").addEventListener('click',()=>{
-      document.querySelector(".custom-atc").style.gridTemplateColumns = "1fr 1fr 1fr"
+      document.querySelector(".custom-atc").style.gridTemplateColumns = "1fr 1fr"
   })
 </script>
 <script>
