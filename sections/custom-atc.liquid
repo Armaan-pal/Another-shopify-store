@@ -141,14 +141,14 @@
                 <p>
                   {{ variant.option1 }}
                 </p>
-                {% comment %}{{ variant.options }}{% endcomment %}
-              </div>
-              <div class="ttl">   <p>
+                <p>
                   {{ variant.option2 }}
                 </p>
                 <p>
                   {{ variant.option3 }}
                 </p>
+                {% comment %}{{ variant.options }}{% endcomment %}
+                
               </div>
 
               {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
