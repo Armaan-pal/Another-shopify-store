@@ -387,6 +387,17 @@ window.cartCardUpdate = function () {
     document.querySelector('.ttlbtn').style.display="none"
     
   })
+
+        const paragraphs = document.querySelectorAll('.ttlandprc p');
+      
+        paragraphs.forEach(paragraph => {
+          paragraph.addEventListener('click', (event) => {
+            paragraphs.forEach(p => {
+              p.style.backgroundColor = '';
+            });
+                  event.target.style.backgroundColor = 'lightblue';
+          });
+        });
 </script>
 {% schema %}
 {
