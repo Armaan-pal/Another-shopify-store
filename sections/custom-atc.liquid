@@ -248,7 +248,7 @@
         <div class="tpstyl">
           {% for option in product.options_with_values %}
             <div class="ttlandprc">
-              <div class="ttl" varnt="{{ option.id }}">
+              <!-- <div class="ttl" varnt="{{ option.id }}"> -->
                 {% comment %}{{ variant.title }}{% endcomment %}
 
                 <span>{{ option.name }}</span>
@@ -265,7 +265,7 @@
                   {% endfor %}
                 </div>
                 {% comment %}{{ variant.options }}{% endcomment %}
-              </div>
+              <!-- </div> -->
 
               {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
             </div>
