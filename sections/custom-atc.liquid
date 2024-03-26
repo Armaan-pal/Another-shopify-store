@@ -179,11 +179,11 @@
                 {% comment %}{{ variant.options }}{% endcomment %}
               </div>
 
-              <button class="ttlbtn">Quick View</button>
               {% comment %}<p class="prc" var="{{variant.id}}">{{ variant.price | money_with_currency}}</p>{% endcomment %}
             </div>
           {% endfor %}
         </div>
+        <button class="ttlbtn">Quick View</button>
       {% else %}
         <div class="ttlandprc">
           <p class="ttl" varnt="{{ product.selected_or_first_available_variant.id }}">
