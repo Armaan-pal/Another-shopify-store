@@ -357,6 +357,18 @@
           });
          });
     })
+
+  let submen = document.querySelectorAll('.header__submenum li')
+      submen.foreach(sm=>{
+        sm.addEventListener('mouseenter',()=>{
+          sm.querySelector('details').setAttribute('open','open')
+        })
+
+         submen.foreach(sm=>{
+        sm.addEventListener('mouseleave',()=>{
+          sm.querySelector('details').removeAttribute('open')
+        })
+      })
 </script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
