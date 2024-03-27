@@ -359,12 +359,11 @@
  
 
   let submen = document.querySelectorAll('.header__submenu li')
-      submen.foreach(sm=>{
+      submen.forEach(sm=>{
         sm.addEventListener('mouseenter',()=>{
           sm.querySelector('details').setAttribute('open','open')
         })
 
-         submen.foreach(sm=>{
         sm.addEventListener('mouseleave',()=>{
           sm.querySelector('details').removeAttribute('open')
         })
