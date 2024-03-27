@@ -9,7 +9,7 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
-<p>armana {{ block_picker_type}}</p>
+<p>armana {{ block.settings.picker_type}}</p>
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
     <variant-radios
