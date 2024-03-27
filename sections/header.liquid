@@ -495,7 +495,7 @@
   </script>
 
   <script>
- 
+  document.addEventListener('DOMContentLoaded',()=>{
         let desktop_menus = document.querySelectorAll('.list-menu--inline header-menu');
       desktop_menus.forEach(function(item){
         item.addEventListener('mouseenter',function(){
@@ -507,7 +507,7 @@
           item.querySelector('details').removeAttribute('open');
           });
          });
- 
+    })
 </script>
 {%- endif -%}
 
