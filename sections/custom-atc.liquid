@@ -241,7 +241,7 @@
           {% endif %}
         {% endfor %}
       {% endif %}
-      {% render 'product-variant-picker', product:product, block.settings.picker_type:"button" %}
+      {% render 'product-variant-picker', product:product, block_picker_type:"button" %}
       {% comment %}<p class="ttl" varnt="{{ product.id }}">{{ product.title }}</p>{% endcomment %}
       {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
       <p style="display:none">{{ product.title }}</p>
