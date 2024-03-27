@@ -247,8 +247,10 @@
       {% if product.variants.size > 1 %}
         <div class="tpstyl">
           <p>hdiudsfhus</p>
+          
           {% for option in product.options_with_values %}
             <div class="ttlandprc">
+              <p>{{ product.variants.size }}</p>
               <!-- <div class="ttl" varnt="{{ option.id }}"> -->
                 {% comment %}{{ variant.title }}{% endcomment %}
 
