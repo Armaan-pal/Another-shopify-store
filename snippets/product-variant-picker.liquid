@@ -25,7 +25,7 @@
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
           <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options', product: product, option: option, block: block,block.settings.picker_type:button %}
+          {% render 'product-variant-options', product: product, option: option, block: block,block_picker_type:"button" %}
         </fieldset>
       {%- endfor -%}
       <script type="application/json">
