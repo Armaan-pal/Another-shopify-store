@@ -241,18 +241,13 @@
           {% endif %}
         {% endfor %}
       {% endif %}
-      {% render 'product-variant-picker', product:product, block_picker_type:"button" %}
       {% comment %}<p class="ttl" varnt="{{ product.id }}">{{ product.title }}</p>{% endcomment %}
       {% comment %} <p class="prc" var="{{product.id}}">{{ product.price | money_with_currency}}</p>{% endcomment %}
       <p style="display:none">{{ product.title }}</p>
       {% if product.variants.size > 1 %}
         <div class="tpstyl">
-          <p>hdiudsfhus</p>
-          <p>{{ product.selected_or_first_available_variant.title }}</p>
-          <p>{{ product.selected_or_first_available_variant.id }}</p>
           {% for option in product.options_with_values %}
             <div class="ttlandprc">
-              
               <!-- <div class="ttl" varnt="{{ option.id }}"> -->
                 {% comment %}{{ variant.title }}{% endcomment %}
 
