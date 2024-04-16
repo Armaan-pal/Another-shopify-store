@@ -11,7 +11,12 @@
             align-items: center;
         }
 
-   
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .cov {
             display: flex;
@@ -21,13 +26,14 @@
 
         .n {
             width: 50%;
-            /* height: 700px; */
+            height: 700px;
+
         }
 
         .para {
             width: 50%;
             text-align: center;
-            /* height: 700px; */
+            height: 700px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,7 +93,7 @@
         }
 
         .bottoms {
-            /* height: 500px; */
+            height: 500px;
             background-color: #99edc3;
         }
 
@@ -196,74 +202,8 @@
             </div>
         </div>
     </div>
-
-    <div class="cov mobcov">
-        <div class="para">
-            <p>
-                <span>What</span>
-                <span>We</span>
-                <span>Do?</span>
-            </p>
-        </div>
-        <div class="swiper n mysSwiper">
-            <div class="swiper-wrapper m">
-                <div class="swiper-slide ss">
-                    <p>Build</p>
-                    <div class="nbutton">
-                        <span>Branding</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                        <span>Illustration</span>
-                        <span>Animation</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                    </div>
-                    <p class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, quam nam?
-                        Tempora, perferendis? Aliquam, repellendus accusantium? Voluptatem assumenda voluptatum
-                        asperiores laboriosam! Ducimus delectus quod cumque aspernatur unde, deserunt porro. Autem?</p>
-                </div>
-                <div class="swiper-slide ss">
-                    <p>Marketing</p>
-                    <div class="nbutton">
-                        <span>Branding</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                        <span>Illustration</span>
-                        <span>Animation</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                    </div>
-                    <p class="lorem">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, quam nam?
-                        Tempora, perferendis? Aliquam, repellendus accusantium? Voluptatem assumenda voluptatum
-                        asperiores laboriosam! Ducimus delectus quod cumque aspernatur unde, deserunt porro. Autem?
-                    </p>
-                </div>
-                <div class="swiper-slide ss">
-                    <p>Design</p>
-                    <div class="nbutton">
-                        <span>Branding</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                        <span>Illustration</span>
-                        <span>Animation</span>
-                        <span>Graphics Design</span>
-                        <span>UI/UX</span>
-                    </div>
-                    <p class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, quam nam?
-                        Tempora, perferendis? Aliquam, repellendus accusantium? Voluptatem assumenda voluptatum
-                        asperiores laboriosam! Ducimus delectus quod cumque aspernatur unde, deserunt porro. Autem?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="bottoms"></div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
             direction: "vertical",
@@ -285,22 +225,7 @@
             }
         });
 
-        var sswiper = new Swiper(".mysSwiper", {
 
-            on: {
-                slideChange: function () {
-                    var activeSlide = this.slides[this.activeIndex];
-                    var isLastSlide = this.isEnd;
-
-                    if (isLastSlide) {
-                        var bgColor = window.getComputedStyle(activeSlide).backgroundColor;
-                        var col = window.getComputedStyle(activeSlide).color;
-                        var nb = document.querySelector('.mobcov').style.backgroundColor = bgColor;
-                        var nc = document.querySelector('.mobcov').style.color = col;
-                    }
-                }
-            }
-        });
     </script>
 
 
