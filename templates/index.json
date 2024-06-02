@@ -69,6 +69,7 @@
     },
     "whatwedo_83t4WT": {
       "type": "whatwedo",
+      "disabled": true,
       "settings": {
       }
     }
