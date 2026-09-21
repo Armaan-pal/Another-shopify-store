@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo_width": 90,
@@ -97,7 +106,7 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -133,9 +142,21 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
+    "blocks": {
+      "3127066969442553494": {
+        "type": "shopify://apps/sobooster/blocks/search-embed/01a0b579-c668-73e4-adde-326db5c9dc91",
+        "disabled": false,
+        "settings": {
+          "instant_search": true,
+          "search_triggers": "details-modal.header__search summary, .header__icon--search, a[href$='/search'], [data-sobooster-search]",
+          "on_search": true,
+          "on_collections": true,
+          "heading": "Search",
+          "selector": "#MainContent"
+        }
+      }
+    },
     "color_schemes": {
       "background-1": {
         "settings": {
@@ -350,7 +371,7 @@
       "sale_badge_color_scheme": "accent-2",
       "sold_out_badge_color_scheme": "inverse",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
