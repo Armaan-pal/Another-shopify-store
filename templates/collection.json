@@ -44,14 +44,14 @@
         "ai_search_product_filter_sb_product_list_VG8XPC": {
           "type": "shopify://apps/ai-search-product-filter-sb/blocks/product-list/45de52d0-b602-4c6e-aa3b-61524a251869",
           "settings": {
-            "usf_show_description": true,
-            "usf_show_grid_border": true,
+            "usf_show_description": false,
+            "usf_show_grid_border": false,
             "usf_columns_desktop": 3,
             "usf_columns_mobile": "2",
             "usf_text_alignment": "center",
             "usf_heading_font": "assistant_n4",
-            "usf_image_style": "rectangle",
-            "usf_image_size": "contain",
+            "usf_image_style": "natural",
+            "usf_image_size": "cover",
             "usf_sale_type": "text",
             "usf_sale_label_position": "top-right",
             "usf_sale_color": "#FF4E4E",
