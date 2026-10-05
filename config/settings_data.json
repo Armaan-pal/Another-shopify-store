@@ -144,9 +144,14 @@
     },
     "content_for_index": [],
     "blocks": {
+      "10249797228608187657": {
+        "type": "shopify://apps/ai-search-product-filter-sb/blocks/core/45de52d0-b602-4c6e-aa3b-61524a251869",
+        "disabled": false,
+        "settings": {}
+      },
       "3127066969442553494": {
         "type": "shopify://apps/sobooster/blocks/search-embed/01a0b579-c668-73e4-adde-326db5c9dc91",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "instant_search": true,
           "search_triggers": "details-modal.header__search summary, .header__icon--search, a[href$='/search'], [data-sobooster-search]",
@@ -155,11 +160,6 @@
           "heading": "Search",
           "selector": "#MainContent"
         }
-      },
-      "10249797228608187657": {
-        "type": "shopify://apps/ai-search-product-filter-sb/blocks/core/45de52d0-b602-4c6e-aa3b-61524a251869",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {
