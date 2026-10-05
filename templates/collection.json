@@ -1,1 +1,78 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"background-1"}},"product-grid":{"type":"main-collection-product-grid","settings":{"products_per_page":16,"columns_desktop":4,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"enable_filtering":true,"filter_type":"horizontal","enable_sorting":true,"columns_mobile":"2","padding_top":36,"padding_bottom":36}}},"order":["banner","product-grid"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1791186527693646b8": {
+      "type": "apps",
+      "blocks": {
+        "ai_search_product_filter_sb_product_list_VG8XPC": {
+          "type": "shopify://apps/ai-search-product-filter-sb/blocks/product-list/45de52d0-b602-4c6e-aa3b-61524a251869",
+          "settings": {
+            "usf_show_description": true,
+            "usf_show_grid_border": true,
+            "usf_columns_desktop": 3,
+            "usf_columns_mobile": "2",
+            "usf_text_alignment": "center",
+            "usf_heading_font": "assistant_n4",
+            "usf_image_style": "rectangle",
+            "usf_image_size": "contain",
+            "usf_sale_type": "text",
+            "usf_sale_label_position": "top-right",
+            "usf_sale_color": "#FF4E4E",
+            "usf_sale_text_color": "#ffffff",
+            "usf_soldout_color": "#000000",
+            "usf_soldout_text_color": "#ffffff",
+            "usf_soldout_label_position": "top-right"
+          }
+        }
+      },
+      "block_order": [
+        "ai_search_product_filter_sb_product_list_VG8XPC"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "1791186527693646b8"
+  ]
+}
