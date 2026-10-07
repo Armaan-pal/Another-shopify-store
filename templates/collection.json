@@ -46,7 +46,7 @@
           "settings": {
             "full_width": true,
             "show_grid_border": false,
-            "columns_desktop": 3,
+            "columns_desktop": 5,
             "columns_mobile": "2",
             "text_alignment": "left",
             "media_aspect_ratio": "natural",
