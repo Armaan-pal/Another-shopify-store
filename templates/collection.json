@@ -41,29 +41,27 @@
     "1791186527693646b8": {
       "type": "apps",
       "blocks": {
-        "ai_search_product_filter_sb_product_list_VG8XPC": {
-          "type": "shopify://apps/ai-search-product-filter-sb/blocks/product-list/45de52d0-b602-4c6e-aa3b-61524a251869",
+        "ai_search_filter_collection_filter_pro_zKXQLw": {
+          "type": "shopify://apps/ai-search-filter/blocks/collection_filter_pro/019e43cf-f9b4-7656-91c8-9c581ef6e93f",
           "settings": {
-            "usf_show_description": false,
-            "usf_show_grid_border": false,
-            "usf_columns_desktop": 3,
-            "usf_columns_mobile": "2",
-            "usf_text_alignment": "center",
-            "usf_heading_font": "assistant_n4",
-            "usf_image_style": "natural",
-            "usf_image_size": "cover",
-            "usf_sale_type": "text",
-            "usf_sale_label_position": "top-right",
-            "usf_sale_color": "#FF4E4E",
-            "usf_sale_text_color": "#ffffff",
-            "usf_soldout_color": "#000000",
-            "usf_soldout_text_color": "#ffffff",
-            "usf_soldout_label_position": "top-right"
+            "full_width": true,
+            "show_grid_border": false,
+            "columns_desktop": 3,
+            "columns_mobile": "2",
+            "text_alignment": "left",
+            "media_aspect_ratio": "natural",
+            "image_size": "cover",
+            "sale_label_position": "top-right",
+            "sale_bg_color": "#FF4E4E",
+            "sale_text_color": "#FFFFFF",
+            "sold_out_label_position": "top-right",
+            "sold_out_bg_color": "#000000",
+            "sold_out_text_color": "#FFFFFF"
           }
         }
       },
       "block_order": [
-        "ai_search_product_filter_sb_product_list_VG8XPC"
+        "ai_search_filter_collection_filter_pro_zKXQLw"
       ],
       "settings": {
         "include_margins": true
